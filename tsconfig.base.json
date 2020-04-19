@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "noImplicitThis": true,
+    "preserveConstEnums": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "declaration": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "stripInternal": true,
+    "pretty": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "**/__tests__/*"]
+}

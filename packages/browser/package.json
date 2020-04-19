@@ -1,0 +1,35 @@
+{
+  "name": "@playwright-utils/browser",
+  "version": "1.0.0",
+  "description": "Playwright browser helper",
+  "author": "Cyrus-d <m.doaie@hotmail.com>",
+  "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyrus-d/playwright-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cyrus-d/playwright-utils/issues"
+  },
+  "dependencies": {
+    "playwright-core": "^0.13.0"
+  },
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -b ./tsconfig.package.json",
+    "prepublish": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

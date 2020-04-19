@@ -2,7 +2,7 @@
 logs
 *.log
 npm-debug.log*
-
+lerna-debug.log
 # Dependencies
 node_modules/
 
@@ -10,7 +10,7 @@ node_modules/
 coverage
 
 # Transpiled files
-build/
+packages/*/lib
 
 # VS Code
 .vscode
@@ -27,3 +27,4 @@ build/
 
 # Misc
 .DS_Store
+packages/browser/tsconfig.package.tsbuildinfo
