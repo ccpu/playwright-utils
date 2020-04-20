@@ -27,29 +27,33 @@ const selectorOperations = (
   });
 
 export const pageMock = () => {
-  let imageBuffer: Buffer;
   return new Promise((resolvePage) => {
-    resolvePage({
-      $: selectorOperations,
-      $eval: selectorOperations,
-      close: () => new Promise((resolve) => resolve({})),
-      goto: () => new Promise((resolve) => resolve({})),
-      mouse: {
-        down: () => new Promise((resolve) => resolve({})),
-        move: () => new Promise((resolve) => resolve({})),
-        up: () => new Promise((resolve) => resolve({})),
-      },
-      // for test only
-      screenshot: () =>
-        new Promise((resolve) => {
-          resolve(imageBuffer);
-        }),
-      setScreenshot: (buffer: Buffer) => {
-        imageBuffer = buffer;
-      },
-      waitFor: () => new Promise((resolve) => resolve({})),
-    });
+    resolvePage(pageProps());
   });
+};
+
+export const pageProps = () => {
+  let imageBuffer: Buffer;
+  return {
+    $: selectorOperations,
+    $eval: selectorOperations,
+    close: () => new Promise((resolve) => resolve({})),
+    goto: () => new Promise((resolve) => resolve({})),
+    mouse: {
+      down: () => new Promise((resolve) => resolve({})),
+      move: () => new Promise((resolve) => resolve({})),
+      up: () => new Promise((resolve) => resolve({})),
+    },
+    // for test only
+    screenshot: () =>
+      new Promise((resolve) => {
+        resolve(imageBuffer);
+      }),
+    setScreenshot: (buffer: Buffer) => {
+      imageBuffer = buffer;
+    },
+    waitFor: () => new Promise((resolve) => resolve({})),
+  };
 };
 
 export const browserMock = async () =>
