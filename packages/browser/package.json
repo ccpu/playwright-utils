@@ -25,11 +25,11 @@
     "playwright-core": "^0.13.0"
   },
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "rimraf lib/* && tsc -b ./tsconfig.package.json",
-    "prepublish": "npm run build"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
+    "prepublish": "npm run build"
   }
 }

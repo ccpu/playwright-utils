@@ -22,5 +22,5 @@
     "noUnusedLocals": true
   },
   "exclude": ["node_modules", "**/node_modules/*"],
-  "include": ["**/__tests__/**/*.ts", "**/scripts/**/*.ts", "__mocks__/*"]
+  "include": ["**/__tests__/**/*.ts", "**/scripts/**/*.ts"]
 }

@@ -26,21 +26,8 @@ const selectorOperations = (
     resolve(elm);
   });
 
-export const browserMock = async () =>
-  new Promise((resolveFun) => {
-    resolveFun({
-      close: () => new Promise((resolve) => resolve({})),
-      newContext: () =>
-        new Promise((resolveContext) =>
-          resolveContext({
-            newPage: pageMock,
-          }),
-        ),
-    });
-  });
-
 export const pageMock = () => {
-  let image = '';
+  let imageBuffer: Buffer;
   return new Promise((resolvePage) => {
     resolvePage({
       $: selectorOperations,
@@ -55,16 +42,28 @@ export const pageMock = () => {
       // for test only
       screenshot: () =>
         new Promise((resolve) => {
-          const buffer = Buffer.from(image, 'base64');
-          resolve(buffer);
+          resolve(imageBuffer);
         }),
-      setScreenshot: (base64Image: string) => {
-        image = base64Image;
+      setScreenshot: (buffer: Buffer) => {
+        imageBuffer = buffer;
       },
       waitFor: () => new Promise((resolve) => resolve({})),
     });
   });
 };
+
+export const browserMock = async () =>
+  new Promise((resolveFun) => {
+    resolveFun({
+      close: () => new Promise((resolve) => resolve({})),
+      newContext: () =>
+        new Promise((resolveContext) =>
+          resolveContext({
+            newPage: pageMock,
+          }),
+        ),
+    });
+  });
 
 const connect = {
   connect: browserMock,
