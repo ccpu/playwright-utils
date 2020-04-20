@@ -11,7 +11,7 @@ import { BrowserManagerConfigs } from './configs';
 
 import { launchOptionsToUrlParts } from './utils/convert-launch-options';
 
-interface PlaywrightBrowserInstance extends PlaywrightBrowser {
+export interface Browser extends PlaywrightBrowser {
   __browserType: string;
 }
 
@@ -22,7 +22,7 @@ const playwright = {
 };
 
 class BrowserManager {
-  private browserInstances: PlaywrightBrowserInstance[] = [];
+  private browserInstances: Browser[] = [];
 
   private configs: BrowserManagerConfigs;
 
@@ -42,7 +42,7 @@ class BrowserManager {
     return this;
   }
 
-  async newPage(browser?: PlaywrightBrowserInstance) {
+  async newPage(browser?: Browser) {
     const browserInstance = browser || this.browserInstances[0];
     const context = await browserInstance.newContext();
     const page = ((await context.newPage()) as unknown) as Page;
@@ -76,7 +76,7 @@ class BrowserManager {
 
     for (let index = 0; index < notRegisteredBrowsers.length; index++) {
       const browserType = notRegisteredBrowsers[index];
-      let browser: PlaywrightBrowserInstance | undefined;
+      let browser: Browser | undefined;
 
       if (this.configs.browserLocation === 'remote') {
         if (!this.configs.wsEndpoint) continue;
