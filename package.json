@@ -27,7 +27,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --ignore-scripts && npm run build",
-    "build": "tsc --build packages/tsconfig.project.json",
+    "build": "lerna run build",
     "watch": "tsc --build --watch packages/tsconfig.project.json",
     "update:tsconfig.json": "ts-node scripts/update-package-tsconfig.ts",
     "update:package.json": "ts-node scripts/update-package-json.ts",

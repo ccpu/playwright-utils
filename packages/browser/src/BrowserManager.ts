@@ -3,7 +3,6 @@ import { chromium, firefox, webkit } from 'playwright-core';
 import {
   Page,
   BrowserProps,
-  PageCommonProps,
   BrowserTypes,
   BrowserLaunchOptions,
   PlaywrightBrowser,
@@ -22,7 +21,7 @@ const playwright = {
   webkit,
 };
 
-class Browser {
+class BrowserManager {
   private browserInstances: PlaywrightBrowserInstance[] = [];
 
   private configs: ConfigProps;
@@ -47,31 +46,22 @@ class Browser {
     return this;
   }
 
-  async newPage(
-    browser?: PlaywrightBrowserInstance,
-    pageCommonProps?: PageCommonProps,
-  ) {
+  async newPage(browser?: PlaywrightBrowserInstance) {
     const browserInstance = browser || this.browserInstances[0];
     const context = await browserInstance.newContext();
     const page = ((await context.newPage()) as unknown) as Page;
-    page.browserType = browserInstance.browserType;
-
-    if (pageCommonProps) {
-      Object.keys(pageCommonProps).forEach((key) => {
-        page[key] = pageCommonProps[key];
-      });
-    }
+    page.__browserType = browserInstance.browserType;
 
     return page;
   }
 
-  async newPages(pageCommonProps?: PageCommonProps) {
+  async newPages() {
     const pages: Page[] = [];
 
     for (let index = 0; index < this.browserInstances.length; index++) {
       const browser = this.browserInstances[index];
       // eslint-disable-next-line no-await-in-loop
-      const page = await this.newPage(browser, pageCommonProps);
+      const page = await this.newPage(browser);
       pages.push(page);
     }
 
@@ -131,4 +121,4 @@ class Browser {
   }
 }
 
-export { Browser };
+export { BrowserManager };

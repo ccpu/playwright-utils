@@ -85,7 +85,7 @@ packageDirnameMap.forEach((packageDirname, packageName) => {
 
   const tsconfigData = {
     compilerOptions: {
-      composite: true,
+      composite: false,
       outDir: './lib',
       rootDir: './src',
     },

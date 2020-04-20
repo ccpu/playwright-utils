@@ -1,10 +1,10 @@
-import { Browser } from '../Browser';
+import { BrowserManager } from '../BrowserManager';
 
 describe('remote browser', () => {
-  let browser: Browser;
+  let browser: BrowserManager;
 
   beforeEach(() => {
-    browser = new Browser({
+    browser = new BrowserManager({
       browserLocation: 'remote',
       wsEndpoint: 'ws://',
     });
@@ -41,40 +41,13 @@ describe('remote browser', () => {
     await browser.registerBrowser(['firefox', 'webkit']);
     expect(browser.getBrowserInstances()).toHaveLength(3);
   });
-
-  it('should have page for each browser instance', async () => {
-    await browser.launch({
-      browserTypes: ['chromium', 'firefox'],
-    });
-
-    let pages = await browser.newPages();
-
-    expect(pages[0].browserType).toBe('chromium');
-    expect(pages[1].browserType).toBe('firefox');
-
-    await browser.registerBrowser(['webkit']);
-
-    pages = await browser.newPages();
-
-    expect(pages[2].browserType).toBe('webkit');
-  });
-
-  it('should attach props to page when creating the page', async () => {
-    await browser.launch({
-      browserTypes: ['chromium'],
-    });
-
-    const pages = await browser.newPages({ snapshotDelay: 1000 });
-
-    expect(pages[0].snapshotDelay).toBe(1000);
-  });
 });
 
 describe('local Browser', () => {
-  let browser: Browser;
+  let browser: BrowserManager;
 
   beforeEach(() => {
-    browser = new Browser({
+    browser = new BrowserManager({
       browserLocation: 'local',
       executablePath: {
         chromium: 'path to chromium',
