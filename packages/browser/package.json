@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/browser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Playwright browser helper",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
