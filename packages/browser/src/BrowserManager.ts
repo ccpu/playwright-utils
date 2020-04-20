@@ -26,8 +26,6 @@ class BrowserManager {
 
   private configs: BrowserManagerConfigs;
 
-  browserTypes: string[] = [];
-
   constructor(config: BrowserManagerConfigs) {
     this.configs = config;
   }
@@ -38,8 +36,6 @@ class BrowserManager {
     if (!browserTypes || !browserTypes.length) {
       throw new Error('Must provide browserTypes!');
     }
-
-    this.browserTypes = [...new Set(browserTypes)];
 
     await this.registerBrowser(browserTypes, browserLaunchOptions);
 

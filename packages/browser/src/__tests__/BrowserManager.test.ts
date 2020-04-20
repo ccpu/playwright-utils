@@ -22,7 +22,6 @@ describe('remote browser', () => {
     await browser.launch({ browserTypes: ['chromium', 'webkit'] });
 
     expect(browser.getBrowserInstances()).toHaveLength(2);
-    expect(browser.browserTypes).toHaveLength(2);
   });
 
   it('should not register browser when browser already registered', async () => {
@@ -65,6 +64,5 @@ describe('local Browser', () => {
     await browser.launch({ browserTypes: ['chromium', 'webkit', 'firefox'] });
 
     expect(browser.getBrowserInstances()).toHaveLength(3);
-    expect(browser.browserTypes).toHaveLength(3);
   });
 });
