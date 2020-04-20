@@ -1,13 +1,13 @@
 {
-  "name": "@playwright-utils/browser",
-  "version": "1.0.12",
-  "description": "Playwright browser helper",
+  "name": "@playwright-utils/mocks",
+  "version": "1.0.0",
+  "description": "> TODO: description",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
   "license": "MIT",
   "main": "./lib/index.js",
   "directories": {
-    "lib": "src",
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
@@ -21,15 +21,12 @@
   "bugs": {
     "url": "https://github.com/Cyrus-d/playwright-utils/issues"
   },
-  "dependencies": {
-    "playwright-core": "^0.13.0"
-  },
   "types": "./lib/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
     "prepublish": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
