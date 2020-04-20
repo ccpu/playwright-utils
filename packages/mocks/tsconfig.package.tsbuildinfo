@@ -129,13 +129,17 @@
         "version": "a1205f8b74ba57896ae4eb9ff19a5ffc7f210352b0b535abcd36d6b06225a3ac",
         "signature": "a1205f8b74ba57896ae4eb9ff19a5ffc7f210352b0b535abcd36d6b06225a3ac"
       },
+      "./src/pageprops.ts": {
+        "version": "0269250aa188138251b9ccb5dd8f264a61728850810bb36e43edc8618359fd3a",
+        "signature": "7f1e9c02679a44d5136952c75421c9ae69ea40db0ee07202d5a4c20142d9421b"
+      },
       "./src/__mocks__/playwright-core.ts": {
-        "version": "a6143a7faaeaad3705e899de0798f6c53cd9a724852c4480fcf8ac49b135dc84",
-        "signature": "f1f49ddbfbe8371d7baf151bdcbc523d5b5cd837a68e289eac0d8d13f7affb6d"
+        "version": "e0a1b93860ddaac820b1f08fdc7338561b0606e98c1f00e2f9d3f6d02d6012e2",
+        "signature": "4b4b15023233057973e339b50027d5f698d37baf8f32e8fefb6b8952f344f179"
       },
       "./src/index.ts": {
-        "version": "6c142291378c5616d8bf16ba329b1398c6a5e2048272b581ebde028dbc909cac",
-        "signature": "7197acf12f2e2a0b3288fe6b88aa6f5dc184025d0c5200ce926e5c86b8e62a29"
+        "version": "9ad132ed4b389c123c87413fa4b93039ca258e052e103bb00eae40c84306b181",
+        "signature": "dc420d03b44b3b88cdcf700bcad91f680d7ac5ee75117b2cd0ba57c04f6db0ee"
       },
       "../../node_modules/@babel/types/lib/index.d.ts": {
         "version": "9566baf39af3e8e8525367b91f8313d0f3dee7dd21aa76bb9ecbc5c3c66df739",
@@ -649,7 +653,14 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./src/pageprops.ts": [
+        "../../node_modules/@types/node/fs.d.ts",
+        "../../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../../node_modules/@types/node/util.d.ts",
+        "../../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/__mocks__/playwright-core.ts": [
+        "./src/pageprops.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -657,6 +668,7 @@
       ],
       "./src/index.ts": [
         "./src/__mocks__/playwright-core.ts",
+        "./src/pageprops.ts",
         "../../node_modules/@types/node/fs.d.ts",
         "../../node_modules/@types/node/ts3.2/fs.d.ts",
         "../../node_modules/@types/node/util.d.ts",
@@ -1417,7 +1429,8 @@
         "../../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./src/index.ts": [
-        "./src/__mocks__/playwright-core.ts"
+        "./src/__mocks__/playwright-core.ts",
+        "./src/pageprops.ts"
       ],
       "../../node_modules/@babel/types/lib/index.d.ts": [
         "../../node_modules/@types/node/fs.d.ts",
@@ -1981,6 +1994,7 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "./src/pageprops.ts",
       "./src/__mocks__/playwright-core.ts",
       "./src/index.ts",
       "../../node_modules/@babel/types/lib/index.d.ts",
