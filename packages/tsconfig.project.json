@@ -4,6 +4,9 @@
   "references": [
     {
       "path": "./browser/tsconfig.package.json"
+    },
+    {
+      "path": "./mocks/tsconfig.package.json"
     }
   ]
 }
