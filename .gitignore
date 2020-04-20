@@ -27,4 +27,5 @@ packages/*/lib
 
 # Misc
 .DS_Store
-packages/browser/tsconfig.package.tsbuildinfo
+
+*.tsbuildinfo
