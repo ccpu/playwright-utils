@@ -36,7 +36,8 @@
     "update:package.json": "ts-node scripts/update-package-json.ts",
     "lint": "yarn eslint . --ext .ts,.tsx",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lerna:publish": "lerna publish"
   },
   "author": "m.doaie <mdoaie@yahoo.co.uk>",
   "license": "MIT",
