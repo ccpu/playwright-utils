@@ -12,7 +12,7 @@ import { BrowserManagerConfigs } from './configs';
 import { launchOptionsToUrlParts } from './utils/convert-launch-options';
 
 interface PlaywrightBrowserInstance extends PlaywrightBrowser {
-  browserType: string;
+  __browserType: string;
 }
 
 const playwright = {
@@ -46,7 +46,7 @@ class BrowserManager {
     const browserInstance = browser || this.browserInstances[0];
     const context = await browserInstance.newContext();
     const page = ((await context.newPage()) as unknown) as Page;
-    page.__browserType = browserInstance.browserType;
+    page.__browserType = browserInstance.__browserType;
 
     return page;
   }
@@ -69,7 +69,7 @@ class BrowserManager {
     launchOptions?: BrowserLaunchOptions,
   ) {
     const notRegisteredBrowsers = browserTypes.filter(
-      (x) => !this.browserInstances.find((b) => b.browserType === x),
+      (x) => !this.browserInstances.find((b) => b.__browserType === x),
     );
 
     if (!notRegisteredBrowsers.length) return false;
@@ -96,7 +96,7 @@ class BrowserManager {
       }
 
       if (browser) {
-        browser.browserType = browserType;
+        browser.__browserType = browserType;
         this.browserInstances.push(browser);
       }
     }
