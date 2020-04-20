@@ -8,14 +8,14 @@ export interface BrowserInstance {
   webkit?: string;
 }
 
-export interface BrowserLaunchConfig {
+export interface BrowserManagerConfigs {
   executablePath?: BrowserInstance;
   wsEndpoint?: BrowserInstance | string;
   browserLocation?: Location;
   getWsEndpoint?: GetEndPoint;
 }
 
-class Configs implements BrowserLaunchConfig {
+class Configs implements BrowserManagerConfigs {
   getWsEndpoint!: GetEndPoint;
 
   private _executablePath: BrowserInstance | undefined;
@@ -53,7 +53,7 @@ const configs = new Configs();
 
 export const getConfigs = () => configs;
 
-export const setConfigs = (props: BrowserLaunchConfig) => {
+export const setConfigs = (props: BrowserManagerConfigs) => {
   Object.keys(props).forEach((key) => {
     configs[key] = props[key];
   });

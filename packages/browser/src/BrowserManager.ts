@@ -7,7 +7,7 @@ import {
   BrowserLaunchOptions,
   PlaywrightBrowser,
 } from './typings';
-import { BrowserLaunchConfig } from './configs';
+import { BrowserManagerConfigs } from './configs';
 
 import { launchOptionsToUrlParts } from './utils/convert-launch-options';
 
@@ -24,11 +24,11 @@ const playwright = {
 class BrowserManager {
   private browserInstances: PlaywrightBrowserInstance[] = [];
 
-  private configs: BrowserLaunchConfig;
+  private configs: BrowserManagerConfigs;
 
   browserTypes: string[] = [];
 
-  constructor(config: BrowserLaunchConfig) {
+  constructor(config: BrowserManagerConfigs) {
     this.configs = config;
   }
 
