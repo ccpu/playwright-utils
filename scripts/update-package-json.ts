@@ -19,7 +19,8 @@ packages.forEach((packageName) => {
   packageJSONData.types = './lib/index.d.ts';
   packageJSONData.files = ['lib', 'src'];
   packageJSONData.scripts = {
-    build: 'rimraf lib/* && tsc -b ./tsconfig.package.json',
+    build:
+      'rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json',
     prepublish: 'npm run build',
   };
   packageJSONData.publishConfig = {

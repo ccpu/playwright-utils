@@ -1,11 +1,11 @@
 import { BrowserManager } from './BrowserManager';
 import { getConfigs } from './configs';
-import { BrowserProps } from './typings';
+import { BrowserOptions } from './typings';
 
 let _browser: BrowserManager;
 
 export const getBrowser = async (
-  browserOptions?: BrowserProps,
+  browserOptions?: BrowserOptions,
   newInstance = false,
 ) => {
   if (newInstance) {

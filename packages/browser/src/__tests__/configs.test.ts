@@ -1,10 +1,10 @@
-import { getConfigs, setConfigs, ConfigProps } from '../configs';
+import { getConfigs, setConfigs, BrowserLaunchConfig } from '../configs';
 
 describe('configs', () => {
   it('should set config', () => {
     const getWsEndpointMock = jest.fn();
     const executablePath = { chromium: 'c', firefox: 'f', webkit: 'w' };
-    const def: ConfigProps = {
+    const def: BrowserLaunchConfig = {
       browserLocation: 'local',
       executablePath,
       getWsEndpoint: getWsEndpointMock,

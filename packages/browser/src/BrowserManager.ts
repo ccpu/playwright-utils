@@ -2,12 +2,12 @@
 import { chromium, firefox, webkit } from 'playwright-core';
 import {
   Page,
-  BrowserProps,
+  BrowserOptions,
   BrowserTypes,
   BrowserLaunchOptions,
   PlaywrightBrowser,
 } from './typings';
-import { ConfigProps } from './configs';
+import { BrowserLaunchConfig } from './configs';
 
 import { launchOptionsToUrlParts } from './utils/convert-launch-options';
 
@@ -24,15 +24,15 @@ const playwright = {
 class BrowserManager {
   private browserInstances: PlaywrightBrowserInstance[] = [];
 
-  private configs: ConfigProps;
+  private configs: BrowserLaunchConfig;
 
   browserTypes: string[] = [];
 
-  constructor(config: ConfigProps) {
+  constructor(config: BrowserLaunchConfig) {
     this.configs = config;
   }
 
-  async launch(props: BrowserProps = {}) {
+  async launch(props: BrowserOptions = {}) {
     const { browserTypes = ['chromium'], browserLaunchOptions } = props;
 
     if (!browserTypes || !browserTypes.length) {

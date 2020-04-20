@@ -72,7 +72,7 @@ export interface CrossBrowserTest {
 
 export type BrowserTypes = 'chromium' | 'firefox' | 'webkit';
 
-export interface BrowserProps {
+export interface BrowserOptions {
   browserTypes?: BrowserTypes[];
   browserLaunchOptions?: BrowserLaunchOptions;
 }
