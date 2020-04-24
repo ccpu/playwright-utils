@@ -5,7 +5,5 @@
 ## Usage
 
 ```
-const browser = require('browser');
-
-// TODO: DEMONSTRATE API
+yarn add @playwright-utils/browser
 ```
