@@ -22,5 +22,9 @@
     "noUnusedLocals": true
   },
   "exclude": ["node_modules", "**/node_modules/*"],
-  "include": ["**/__tests__/**/*.ts", "**/scripts/**/*.ts"]
+  "include": [
+    "**/__tests__/**/*.ts",
+    "**/scripts/**/*.ts",
+    "packages/**/src/**/*"
+  ]
 }
