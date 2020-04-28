@@ -12,7 +12,7 @@ import { BrowserManagerConfigs } from './configs';
 import { launchOptionsToUrlParts } from './utils/convert-launch-options';
 
 export interface Browser extends PlaywrightBrowser {
-  __browserType: string;
+  __browserType: BrowserTypes;
 }
 
 const playwright = {
@@ -42,8 +42,16 @@ class BrowserManager {
     return this;
   }
 
-  async newPage(browser?: Browser) {
-    const browserInstance = browser || this.browserInstances[0];
+  async newPage(browserType?: BrowserTypes) {
+    let browserInstance =
+      (browserType && this.getBrowser(browserType)) || this.browserInstances[0];
+
+    if (!browserInstance && browserType) {
+      await this.registerBrowser([browserType]);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      browserInstance = this.getBrowser(browserType)!;
+    }
+
     const context = await browserInstance.newContext();
     const page = ((await context.newPage()) as unknown) as Page;
     page.__browserType = browserInstance.__browserType;
@@ -57,7 +65,7 @@ class BrowserManager {
     for (let index = 0; index < this.browserInstances.length; index++) {
       const browser = this.browserInstances[index];
       // eslint-disable-next-line no-await-in-loop
-      const page = await this.newPage(browser);
+      const page = await this.newPage(browser.__browserType);
       pages.push(page);
     }
 
@@ -96,7 +104,7 @@ class BrowserManager {
       }
 
       if (browser) {
-        browser.__browserType = browserType;
+        browser.__browserType = browserType as BrowserTypes;
         this.browserInstances.push(browser);
       }
     }
@@ -108,12 +116,26 @@ class BrowserManager {
     return this.browserInstances;
   }
 
-  async close() {
+  getBrowser(browserType: BrowserTypes) {
+    return this.browserInstances.find((x) => x.__browserType === browserType);
+  }
+
+  async close(browserType: BrowserTypes) {
+    const browser = this.getBrowser(browserType);
+    if (!browser) return;
+    await browser.close();
+    this.browserInstances = this.browserInstances.filter(
+      (x) => x.__browserType !== browserType,
+    );
+  }
+
+  async closeAll() {
     const result: Promise<void>[] = [];
     this.browserInstances.forEach((browser) => {
       result.push(browser.close());
     });
     await Promise.all(result);
+    this.browserInstances = [];
   }
 }
 
