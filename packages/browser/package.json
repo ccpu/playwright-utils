@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/browser",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Playwright browser helper",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
@@ -28,9 +28,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "gitHead": "af34a89bbb2ea1a880659aec2cad57efe20ff7ec",
   "scripts": {
-    "build": "/node_modules/bin/rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
+    "build": "./node_modules/rimraf/bin.js lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
     "prepublish": "npm run build"
-  },
-  "gitHead": "551cef612f5725e51ecb41a774debf3a31d52b7f"
+  }
 }
