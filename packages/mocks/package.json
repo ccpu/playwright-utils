@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/mocks",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "> TODO: description",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
@@ -25,9 +25,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "983826e89224d5a1b8a72c6a8833e30c51738d31",
+  "gitHead": "7b3bd6e935c4e74ac9461e14aa7d056fd93944ff",
   "scripts": {
-    "build": "./node_modules/rimraf/bin.js lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
+    "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
     "prepublish": "npm run build"
   }
 }
