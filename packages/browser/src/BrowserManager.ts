@@ -55,7 +55,6 @@ class BrowserManager {
     const context = await browserInstance.newContext();
     const page = ((await context.newPage()) as unknown) as Page;
     page.__browserType = browserInstance.__browserType;
-    page.waitFor();
     return page;
   }
 
