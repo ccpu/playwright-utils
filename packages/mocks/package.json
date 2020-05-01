@@ -29,5 +29,8 @@
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
     "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "playwright-core": "^0.16.0"
   }
 }
