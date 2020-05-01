@@ -29,3 +29,4 @@ packages/*/lib
 .DS_Store
 
 *.tsbuildinfo
+packages/**/*.tsbuildinfo
