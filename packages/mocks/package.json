@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/mocks",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "> TODO: description",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
@@ -28,5 +28,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "4a6770dd571bf732e75f8cad582899fdbb98e2cb"
 }
