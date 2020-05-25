@@ -1,5 +1,10 @@
 /* eslint-disable no-await-in-loop */
-import { chromium, firefox, webkit } from 'playwright-core';
+import {
+  chromium,
+  firefox,
+  webkit,
+  BrowserContextOptions,
+} from 'playwright-core';
 import {
   Page,
   BrowserOptions,
@@ -42,7 +47,10 @@ class BrowserManager {
     return this;
   }
 
-  async newPage(browserType?: BrowserTypes) {
+  async newPage(
+    browserType?: BrowserTypes,
+    browserContextOptions?: BrowserContextOptions,
+  ) {
     let browserInstance =
       (browserType && this.getBrowser(browserType)) || this.browserInstances[0];
 
@@ -52,19 +60,22 @@ class BrowserManager {
       browserInstance = this.getBrowser(browserType)!;
     }
 
-    const context = await browserInstance.newContext();
+    const context = await browserInstance.newContext(browserContextOptions);
     const page = ((await context.newPage()) as unknown) as Page;
     page.__browserType = browserInstance.__browserType;
     return page;
   }
 
-  async newPages() {
+  async newPages(browserContextOptions?: BrowserContextOptions) {
     const pages: Page[] = [];
 
     for (let index = 0; index < this.browserInstances.length; index++) {
       const browser = this.browserInstances[index];
       // eslint-disable-next-line no-await-in-loop
-      const page = await this.newPage(browser.__browserType);
+      const page = await this.newPage(
+        browser.__browserType,
+        browserContextOptions,
+      );
       pages.push(page);
     }
 
