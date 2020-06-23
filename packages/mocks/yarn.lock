@@ -3,9 +3,9 @@
 
 
 "@types/node@*":
-  version "13.13.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.4.tgz#1581d6c16e3d4803eb079c87d4ac893ee7501c2c"
-  integrity sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
+  version "14.0.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.13.tgz#ee1128e881b874c371374c1f72201893616417c9"
+  integrity sha512-rouEWBImiRaSJsVA+ITTFM6ZxibuAlTuNOCyxVbwreu6k6+ujs7DfnU9o+PShFhET78pMBl3eH+AGSI5eOTkPA==
 
 "@types/yauzl@^2.9.1":
   version "2.9.1"
@@ -83,9 +83,9 @@ es6-promisify@^5.0.0:
     es6-promise "^4.0.3"
 
 extract-zip@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-2.0.0.tgz#f53b71d44f4ff5a4527a2259ade000fb8b303492"
-  integrity sha512-i42GQ498yibjdvIhivUsRslx608whtGoFIhF26Z7O4MYncBxp8CwalOs1lnHy21A9sIohWO2+uiE4SRtC9JXDg==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-2.0.1.tgz#663dca56fe46df890d5f131ef4a06d22bb8ba13a"
+  integrity sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==
   dependencies:
     debug "^4.1.1"
     get-stream "^5.1.0"
@@ -151,9 +151,9 @@ jpeg-js@^0.3.7:
   integrity sha512-9IXdWudL61npZjvLuVe/ktHiA41iE8qFyLB+4VDTblEsWBzeg8WQTlktdUK4CdncUqtUgUg0bbOmTE2bKBKaBQ==
 
 mime@^2.4.4:
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
-  integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.6.tgz#e5b407c90db442f2beb5b162373d07b69affa4d1"
+  integrity sha512-RZKhC3EmpBchfTGBVb8fb+RL2cWyw/32lshnsETttkBAyAUXSGHxbEJWWRXc751DrIxG1q04b8QwMbAwkRPpUA==
 
 minimatch@^3.0.4:
   version "3.0.4"
@@ -184,10 +184,10 @@ pend@~1.2.0:
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha1-elfrVQpng/kRUzH89GY9XI4AelA=
 
-playwright-core@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-0.16.0.tgz#edae5a4b96e556bc7c91c44f92649cc76b4cf5a3"
-  integrity sha512-1p+vgQBGew+9ZdBCQeobkVZiiZltfXPsjilKuw+ajwWmmiWU2t2QYGDPlMQcnf0HDXh4pv5QKzlg3HB046jIzQ==
+playwright-core@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.0.2.tgz#fa56b61ac01892dfa903c69e27aa1e9fec055afd"
+  integrity sha512-JYTygH/jJ4/wpIy+owSMnEQb8BjbQptWqpED6smwEmccijL2B74KZg92V93rdmJxc4lNuS4iLR6SG3RQbBW2Aw==
   dependencies:
     debug "^4.1.1"
     extract-zip "^2.0.0"
