@@ -1,3 +1,5 @@
+import { Page } from 'playwright-core';
+
 const selectorOperations = (
   selector: unknown,
   callBack: (...ars: unknown[]) => void,
@@ -26,17 +28,29 @@ const selectorOperations = (
     resolve(elm);
   });
 
-export const pageProps = () => {
+export interface PageProps extends Page {
+  setScreenshot: (buffer: Buffer) => void;
+  dragDropSelector(this: Page, selector: string, opts: unknown): Promise<void>;
+  mouseMoveToSelector: () => void;
+  mouseDownOnSelector: (
+    selector: string,
+    pos?: { x: number; y: number },
+  ) => void;
+}
+
+export const pagePropsMock = (page?: Partial<Page>): PageProps => {
   let imageBuffer: Buffer;
   return {
     $: selectorOperations,
     $eval: selectorOperations,
-    close: () => new Promise((resolve) => resolve({})),
-    goto: () => new Promise((resolve) => resolve({})),
+    close: () => new Promise((resolve) => resolve()),
+
+    goto: () => new Promise((resolve) => resolve()),
+
     mouse: {
-      down: () => new Promise((resolve) => resolve({})),
-      move: () => new Promise((resolve) => resolve({})),
-      up: () => new Promise((resolve) => resolve({})),
+      down: () => new Promise((resolve) => resolve()),
+      move: () => new Promise((resolve) => resolve()),
+      up: () => new Promise((resolve) => resolve()),
     },
     // for test only
     screenshot: () =>
@@ -46,6 +60,8 @@ export const pageProps = () => {
     setScreenshot: (buffer: Buffer) => {
       imageBuffer = buffer;
     },
-    waitFor: () => new Promise((resolve) => resolve({})),
-  };
+    waitForSelector: () => new Promise((resolve) => resolve({})),
+    waitForTimeout: () => new Promise((resolve) => resolve()),
+    ...page,
+  } as PageProps;
 };

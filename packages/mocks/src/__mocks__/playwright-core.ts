@@ -1,8 +1,8 @@
-import { pageProps } from '../pageProps';
+import { pagePropsMock, PageProps } from '../pageProps';
 
-export const pageMock = () => {
-  return new Promise((resolvePage) => {
-    resolvePage(pageProps());
+export const pageMock = (): Promise<PageProps> => {
+  return new Promise<PageProps>((resolvePage) => {
+    resolvePage(pagePropsMock());
   });
 };
 

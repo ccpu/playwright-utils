@@ -3,10 +3,13 @@
   "files": [],
   "references": [
     {
+      "path": "./mocks/tsconfig.package.json"
+    },
+    {
       "path": "./browser/tsconfig.package.json"
     },
     {
-      "path": "./mocks/tsconfig.package.json"
+      "path": "./page/tsconfig.package.json"
     }
   ]
 }
