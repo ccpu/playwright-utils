@@ -30,12 +30,6 @@ const selectorOperations = (
 
 export interface PageProps extends Page {
   setScreenshot: (buffer: Buffer) => void;
-  dragDropSelector(this: Page, selector: string, opts: unknown): Promise<void>;
-  mouseMoveToSelector: () => void;
-  mouseDownOnSelector: (
-    selector: string,
-    pos?: { x: number; y: number },
-  ) => void;
 }
 
 export const pagePropsMock = (page?: Partial<Page>): PageProps => {

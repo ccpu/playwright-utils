@@ -142,8 +142,8 @@
         "signature": "bf89c136c36e34a6735490c96b33b90a2b7c2d20479565112c52e0b5b60cd3b4"
       },
       "./src/pageprops.ts": {
-        "version": "92952a41fc0992eae01fb663ba78d5fa0b2cfb54baebe2d56a2c73325427fd6f",
-        "signature": "749d5b2fdcefeddb3cb81c0d04d34789eae6f28a1a799fb3805d30fed0550ca6"
+        "version": "70ff6d298a9ca6f54c794f974c36fddd8d1aee2938d96ad5261ace9e23ef47c0",
+        "signature": "bcd61df8e019dab00321ee04e125b7972468d09874ca0508c8e9a807e37adbdf"
       },
       "./src/__mocks__/playwright-core.ts": {
         "version": "e0561ed0645369254f0fcbb8c0c931b98d4c960eaf1894c0b5b5d8363535b931",
