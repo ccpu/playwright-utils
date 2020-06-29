@@ -1,8 +1,8 @@
 {
-  "name": "@playwright-utils/mocks",
-  "version": "1.0.18",
+  "name": "@playwright/page",
+  "version": "1.0.0",
   "description": "> TODO: description",
-  "author": "Cyrus-d <m.doaie@hotmail.com>",
+  "author": "ccpu <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -10,24 +10,26 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
-    "lib",
-    "src"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cyrus-d/playwright-utils.git"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "bugs": {
     "url": "https://github.com/Cyrus-d/playwright-utils/issues"
+  },
+  "dependencies": {
+    "playwright-core": "1.0.2"
   },
   "types": "./lib/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "7b3bd6e935c4e74ac9461e14aa7d056fd93944ff",
-  "dependencies": {
-    "playwright-core": "1.0.2"
+  "devDependencies": {
+    "@playwright-utils/mocks": "^1.0.18"
   },
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
