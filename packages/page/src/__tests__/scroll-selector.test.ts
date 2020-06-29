@@ -22,7 +22,7 @@ describe('scrollElement', () => {
   });
 
   it('should change scrollTop ', async () => {
-    const elm = await page.scrollSelector('#selector', { x: 10, y: 10 });
+    const elm = await page.scrollSelector('#selector', { left: 10, top: 10 });
     expect(((elm as unknown) as HTMLElement).scrollTop).toBe(10);
     expect(((elm as unknown) as HTMLElement).scrollLeft).toBe(10);
   });

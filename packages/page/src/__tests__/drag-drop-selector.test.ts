@@ -1,5 +1,6 @@
 import { pagePropsMock, PageProps } from '@playwright-utils/mocks';
 import { dragDropSelector } from '../drag-drop-selector';
+import { ExtendedPage } from '../typings';
 
 const pageMock = (): Promise<PageProps> => {
   return new Promise<PageProps>((resolvePage) => {
@@ -8,9 +9,9 @@ const pageMock = (): Promise<PageProps> => {
 };
 
 describe('dragDropSelector', () => {
-  let page: PageProps;
+  let page: ExtendedPage;
   beforeEach(async () => {
-    page = await pageMock();
+    page = ((await pageMock()) as unknown) as ExtendedPage;
     page.dragDropSelector = dragDropSelector;
   });
 
@@ -23,9 +24,7 @@ describe('dragDropSelector', () => {
     page.mouse.down = downMock;
     page.mouse.up = upMock;
 
-    await page.dragDropSelector('#selector', {
-      mouseMoveRelativePoint: { x: 50, y: 50 },
-    });
+    await page.dragDropSelector('#selector', { x: 50, y: 50 });
     expect(moveMock.mock.calls[0]).toMatchObject([50, 50]);
     expect(moveMock.mock.calls[1]).toMatchObject([100, 100]);
     expect(downMock).toHaveBeenCalledTimes(1);
@@ -41,10 +40,12 @@ describe('dragDropSelector', () => {
     page.mouse.down = downMock;
     page.mouse.up = upMock;
 
-    await page.dragDropSelector('#selector', {
-      mouseDownRelativePoint: { x: 10, y: 10 },
-      mouseMoveRelativePoint: { x: 50, y: 50 },
-    });
+    await page.dragDropSelector(
+      '#selector',
+      { x: 10, y: 10 },
+      { x: 50, y: 50 },
+    );
+
     expect(moveMock.mock.calls[0]).toMatchObject([10, 10]);
     expect(moveMock.mock.calls[1]).toMatchObject([60, 60]);
     expect(downMock).toHaveBeenCalledTimes(1);
