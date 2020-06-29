@@ -29,7 +29,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "7b3bd6e935c4e74ac9461e14aa7d056fd93944ff",
+  "gitHead": "a34279d22cbbb220daba396414068d7edd3aaff1",
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
     "prepublish": "npm run build"

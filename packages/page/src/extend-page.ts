@@ -1,5 +1,4 @@
-import { Page } from 'playwright-core';
-import { ExtendedPage } from './typings';
+import { NewPageFunc } from './typings';
 
 import {
   scrollSelector,
@@ -8,12 +7,13 @@ import {
   dragDropSelector,
 } from '.';
 
-export const extendPage = <T extends Page>(page: T): ExtendedPage => {
-  const thisPage = (page as unknown) as ExtendedPage;
+export function extendPage<T>(page: T) {
+  const thisPage = page as NewPageFunc & T;
+
   thisPage.dragDropSelector = dragDropSelector;
   thisPage.scrollSelector = scrollSelector;
   thisPage.mouseDownOnSelector = mouseDownOnSelector;
   thisPage.mouseMoveToSelector = mouseMoveToSelector;
 
   return thisPage;
-};
+}
