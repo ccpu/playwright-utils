@@ -32,7 +32,7 @@ export interface ElementHandleBoundingBox {
   height: number;
 }
 
-export interface ExtendedPage extends Page {
+export interface NewPageFunc {
   dragDropSelector: (
     selector: string,
     options: DragDropOptions,
@@ -41,3 +41,5 @@ export interface ExtendedPage extends Page {
   mouseDownOnSelector: (selector: string, point?: Position) => Promise<void>;
   mouseMoveToSelector: (selector: string, point?: Position) => Promise<void>;
 }
+
+export interface ExtendedPage extends Page, NewPageFunc {}
