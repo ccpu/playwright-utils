@@ -42,8 +42,8 @@ describe('dragDropSelector', () => {
 
     await page.dragDropSelector(
       '#selector',
-      { x: 10, y: 10 },
       { x: 50, y: 50 },
+      { x: 10, y: 10 },
     );
 
     expect(moveMock.mock.calls[0]).toMatchObject([10, 10]);
