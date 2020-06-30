@@ -1,5 +1,6 @@
 import { pagePropsMock, PageProps } from '@playwright-utils/mocks';
 import { mouseDownOnSelector } from '../mouse-down-on-selector';
+import { ExtendedPage } from '../typings';
 
 const pageMock = (): Promise<PageProps> => {
   return new Promise<PageProps>((resolvePage) => {
@@ -8,9 +9,9 @@ const pageMock = (): Promise<PageProps> => {
 };
 
 describe('mouseDownOnSelector', () => {
-  let page: PageProps;
+  let page: ExtendedPage;
   beforeAll(async () => {
-    page = await pageMock();
+    page = ((await pageMock()) as unknown) as ExtendedPage;
     page.mouseDownOnSelector = mouseDownOnSelector;
   });
 
