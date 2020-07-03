@@ -39,7 +39,7 @@ export interface ElementHandleBoundingBox {
 
 export interface NewPageFunc {
   /**
-   * This method fetches an element with `selector`, and move it to position given by user.
+   * This method fetches an element with `selector`, and move it to the position given by user.
    * If there's no element matching `selector`, the method waits until a matching element appears in the DOM.
    * @param selector A selector to search for element to click. If there are multiple elements satisfying the selector, the first will be clicked.
    * @param to Required and selector will move to position given to this option
