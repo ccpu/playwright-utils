@@ -27,7 +27,7 @@
   },
   "gitHead": "a34279d22cbbb220daba396414068d7edd3aaff1",
   "dependencies": {
-    "playwright-core": "1.0.2"
+    "playwright-core": "^1.2.0"
   },
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",
