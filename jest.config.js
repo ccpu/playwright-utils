@@ -3,7 +3,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   modulePathIgnorePatterns: ['packages\\browser\\src\\__tests__\\mock'],
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
