@@ -5,6 +5,7 @@ import {
   mouseDownOnSelector,
   mouseMoveToSelector,
   dragDropSelector,
+  setSelectorSize,
 } from '.';
 
 export function extendPage<T>(page: T) {
@@ -14,6 +15,7 @@ export function extendPage<T>(page: T) {
   thisPage.scrollSelector = scrollSelector;
   thisPage.mouseDownOnSelector = mouseDownOnSelector;
   thisPage.mouseMoveToSelector = mouseMoveToSelector;
+  thisPage.setSelectorSize = setSelectorSize;
 
   return thisPage;
 }
