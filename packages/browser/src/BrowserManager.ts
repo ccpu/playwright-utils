@@ -1,10 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import {
-  chromium,
-  firefox,
-  webkit,
-  BrowserContextOptions,
-} from 'playwright-core';
+import { chromium, firefox, webkit, BrowserContextOptions } from 'playwright';
 import {
   Page,
   BrowserOptions,
