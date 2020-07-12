@@ -4,6 +4,7 @@ describe('remote browser', () => {
   let browser: BrowserManager;
 
   beforeEach(() => {
+    jest.clearAllMocks();
     browser = new BrowserManager({
       browserLocation: 'remote',
       wsEndpoint: 'ws://',
