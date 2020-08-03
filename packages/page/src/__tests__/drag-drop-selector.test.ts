@@ -10,6 +10,7 @@ const pageMock = (): Promise<PageProps> => {
 
 describe('dragDropSelector', () => {
   let page: ExtendedPage;
+
   beforeEach(async () => {
     page = ((await pageMock()) as unknown) as ExtendedPage;
     page.dragDropSelector = dragDropSelector;

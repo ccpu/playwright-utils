@@ -6,6 +6,7 @@ import {
   mouseMoveToSelector,
   dragDropSelector,
   setSelectorSize,
+  clearInput,
 } from '.';
 
 export function extendPage<T>(page: T) {
@@ -16,6 +17,7 @@ export function extendPage<T>(page: T) {
   thisPage.mouseDownOnSelector = mouseDownOnSelector;
   thisPage.mouseMoveToSelector = mouseMoveToSelector;
   thisPage.setSelectorSize = setSelectorSize;
+  thisPage.clearInput = clearInput;
 
   return thisPage;
 }
