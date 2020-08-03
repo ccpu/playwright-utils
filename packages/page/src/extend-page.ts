@@ -1,4 +1,4 @@
-import { NewPageFunc } from './typings';
+import { ExtendedPlaywrightPageFunctions } from './typings';
 
 import {
   scrollSelector,
@@ -10,7 +10,7 @@ import {
 } from '.';
 
 export function extendPage<T>(page: T) {
-  const thisPage = page as NewPageFunc & T;
+  const thisPage = page as ExtendedPlaywrightPageFunctions & T;
 
   thisPage.dragDropSelector = dragDropSelector;
   thisPage.scrollSelector = scrollSelector;

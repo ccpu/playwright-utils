@@ -45,7 +45,13 @@ export interface ElementHandleBoundingBox {
   height: number;
 }
 
-export interface NewPageFunc {
+export interface ExtendedPlaywrightPageFunctions {
+  /**
+   * This method fetches an element with `selector`, waits for actionability checks, focuses the element, empty it and triggers an input event.
+   * If the element matching selector is not an <input>, <textarea> or [contenteditable] element, this method throws an error.
+   */
+  clearInput: (selector: string, options?: ClearInputOptions) => Promise<void>;
+
   /**
    * This method fetches an element with `selector`, and move it to the position given by user.
    * If there's no element matching `selector`, the method waits until a matching element appears in the DOM.
@@ -89,12 +95,6 @@ export interface NewPageFunc {
     width?: string,
     height?: string,
   ) => Promise<void>;
-
-  /**
-   * This method fetches an element with `selector`, waits for actionability checks, focuses the element, empty it and triggers an input event.
-   * If the element matching selector is not an <input>, <textarea> or [contenteditable] element, this method throws an error.
-   */
-  clearInput: (selector: string, options?: ClearInputOptions) => Promise<void>;
 }
 
-export interface ExtendedPage extends Page, NewPageFunc {}
+export interface ExtendedPage extends Page, ExtendedPlaywrightPageFunctions {}
