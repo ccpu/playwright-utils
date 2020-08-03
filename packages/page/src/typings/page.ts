@@ -16,10 +16,7 @@ export interface DragDropOptions {
 }
 
 export interface ClearInputOptions {
-  /**
-   * @default true
-   */
-  focus?: boolean;
+  blur?: boolean;
   timeout?: number;
 }
 

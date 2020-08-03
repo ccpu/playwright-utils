@@ -27,7 +27,7 @@ describe('clearInput', () => {
     const evalMock = jest.fn();
     page.$eval = evalMock;
     page.fill = jest.fn();
-    await page.clearInput('#selector', { focus: false });
+    await page.clearInput('#selector', { blur: true });
     expect(evalMock).toHaveBeenCalledTimes(1);
   });
 

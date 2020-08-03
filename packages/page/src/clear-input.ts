@@ -8,7 +8,7 @@ export async function clearInput(
 ) {
   await this.fill(selector, '');
   if (!options) return;
-  if (options.focus === false) {
+  if (options.blur) {
     await this.$eval(selector, (e) => e.blur());
   }
   if (options.timeout) {
