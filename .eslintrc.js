@@ -7,7 +7,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: 'tsconfig.base.json',
+    project: 'tsconfig.eslintrc.json',
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'sort-keys-fix', 'jest'],

@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@playwright-utils/mocks@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@playwright-utils/mocks/-/mocks-1.0.22.tgz#b8026214b12eb629f371522552ec404aa80d5969"
+  integrity sha512-SkENh/RjdPilxoG2gLc7hv0jFDmk+efSsd1UIj9+xUNByL4Aef2uEhFWPVV/hX8anDGdJ6bdXltFyLmEY5+AUg==
+  dependencies:
+    playwright-core "^1.2.0"
+
 "@types/node@*":
   version "14.0.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.14.tgz#24a0b5959f16ac141aeb0c5b3cd7a15b7c64cbce"
@@ -136,6 +143,11 @@ jpeg-js@^0.3.7:
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.7.tgz#471a89d06011640592d314158608690172b1028d"
   integrity sha512-9IXdWudL61npZjvLuVe/ktHiA41iE8qFyLB+4VDTblEsWBzeg8WQTlktdUK4CdncUqtUgUg0bbOmTE2bKBKaBQ==
 
+jpeg-js@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.1.tgz#937a3ae911eb6427f151760f8123f04c8bfe6ef7"
+  integrity sha512-jA55yJiB5tCXEddos8JBbvW+IMrqY0y1tjjx9KNVtA+QPmu7ND5j0zkKopClpUTsaETL135uOM2XfcYG4XRjmw==
+
 mime@^2.4.4:
   version "2.4.6"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.6.tgz#e5b407c90db442f2beb5b162373d07b69affa4d1"
@@ -180,6 +192,22 @@ playwright-core@^1.2.0:
     extract-zip "^2.0.0"
     https-proxy-agent "^5.0.0"
     jpeg-js "^0.3.7"
+    mime "^2.4.4"
+    pngjs "^5.0.0"
+    progress "^2.0.3"
+    proxy-from-env "^1.1.0"
+    rimraf "^3.0.2"
+    ws "^6.1.0"
+
+playwright-core@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.3.0.tgz#b34c965b017e30ee76d8c2133be36a49048b0507"
+  integrity sha512-g/KHXOZqmiyw6ZgdLQdU7gKAyI5Oo15R76022qi64RnrO01eFZZMWmq3J3GQr8Ah2monWK4GKr2MM1E3Tb25XQ==
+  dependencies:
+    debug "^4.1.1"
+    extract-zip "^2.0.0"
+    https-proxy-agent "^5.0.0"
+    jpeg-js "^0.4.0"
     mime "^2.4.4"
     pngjs "^5.0.0"
     progress "^2.0.3"
