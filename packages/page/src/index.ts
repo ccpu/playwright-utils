@@ -7,3 +7,4 @@ export * from './mouse-move-to-selector';
 export * from './scroll-selector';
 export * from './set-selector-size';
 export * from './clear-input';
+export * from './selector-mouse-wheel';

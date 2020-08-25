@@ -20,6 +20,13 @@ export interface ClearInputOptions {
   timeout?: number;
 }
 
+export interface SelectorMouseWheelOptions {
+  deltaMode?: number;
+  deltaX?: number;
+  deltaY?: number;
+  deltaZ?: number;
+}
+
 export interface ElementHandleBoundingBox {
   /**
    * the x coordinate of the element in pixels.
@@ -91,6 +98,15 @@ export interface ExtendedPlaywrightPageFunctions {
     selector: string,
     width?: string,
     height?: string,
+  ) => Promise<void>;
+
+  /**
+   * This method fetches an element with `selector`, and dispatch WheelEvent.
+   * If there's no element matching `selector`, the method waits until a matching element appears in the DOM.
+   */
+  selectorMouseWheel: (
+    selector: string,
+    eventInitDict?: SelectorMouseWheelOptions,
   ) => Promise<void>;
 }
 
