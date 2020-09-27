@@ -14,7 +14,7 @@ describe('getBoundingBox', () => {
     ).rejects.toThrowError('Unable to get boundingBox!');
   });
 
-  it('should return rect ', async () => {
+  it('should return bounding box', async () => {
     const box = await getBoundingBox(pagePropsMock(), '#selector');
     expect(box).toStrictEqual({ height: 100, width: 100, x: 0, y: 0 });
   });

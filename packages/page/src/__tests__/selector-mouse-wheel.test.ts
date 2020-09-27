@@ -15,7 +15,7 @@ describe('selectorMouseWheel', () => {
     page.selectorMouseWheel = selectorMouseWheel;
   });
 
-  it('should ', async () => {
+  it('should test selectorMouseWheel', async () => {
     const evalMock = jest.fn();
     const elm = document.createElement('div');
 

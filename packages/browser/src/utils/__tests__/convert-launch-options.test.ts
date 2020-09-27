@@ -6,7 +6,7 @@ describe('launchOptionToUrlParts', () => {
     expect(urlStr).toBe('/server-headless=true');
   });
 
-  it('should return multiple option ', () => {
+  it('should return multiple option', () => {
     const urlStr = launchOptionsToUrlParts({ headless: true, timeout: 300 });
     expect(urlStr).toBe('/server-headless=true/server-timeout=300');
   });
