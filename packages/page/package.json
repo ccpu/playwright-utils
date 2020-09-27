@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/page",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "> TODO: description",
   "author": "ccpu <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
@@ -29,7 +29,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@playwright-utils/mocks": "^1.0.23"
+    "@playwright-utils/mocks": "^1.1.0"
   },
   "scripts": {
     "build": "rimraf lib/* tsconfig.package.tsbuildinfo && tsc -b ./tsconfig.package.json",

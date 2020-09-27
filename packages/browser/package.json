@@ -1,6 +1,6 @@
 {
   "name": "@playwright-utils/browser",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "Playwright browser helper",
   "author": "Cyrus-d <m.doaie@hotmail.com>",
   "homepage": "https://github.com/Cyrus-d/playwright-utils#readme",
@@ -22,7 +22,7 @@
     "url": "https://github.com/Cyrus-d/playwright-utils/issues"
   },
   "dependencies": {
-    "@playwright-utils/mocks": "^1.0.23",
+    "@playwright-utils/mocks": "^1.1.0",
     "playwright": "^1.4.2"
   },
   "types": "./lib/index.d.ts",
