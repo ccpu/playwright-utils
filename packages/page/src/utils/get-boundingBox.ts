@@ -1,4 +1,4 @@
-import { Page } from 'playwright-core';
+import { Page } from 'playwright';
 import { ElementHandleBoundingBox } from '../typings';
 
 export const getBoundingBox = async (

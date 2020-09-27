@@ -1,6 +1,6 @@
 import { getPointByDirection } from './utils/get-point-by-direction';
 import { Position } from './typings';
-import { Page } from 'playwright-core';
+import { Page } from 'playwright';
 import { getBoundingBox } from './utils/get-boundingBox';
 
 export async function dragDropSelector(

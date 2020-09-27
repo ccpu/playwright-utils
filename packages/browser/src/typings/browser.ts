@@ -1,4 +1,4 @@
-import { Browser as PlaywrightBrowser } from 'playwright-core/types/types';
+import { Browser as PlaywrightBrowser } from 'playwright';
 
 // type ArgsType<T> = T extends (...args: infer U) => unknown ? U : never;
 

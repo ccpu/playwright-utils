@@ -1,4 +1,4 @@
-import { Page } from 'playwright-core';
+import { Page } from 'playwright';
 import { ClearInputOptions } from './typings';
 
 export async function clearInput(

@@ -1,4 +1,4 @@
-import { Page } from 'playwright-core';
+import { Page } from 'playwright';
 
 export interface Position {
   x?: number;

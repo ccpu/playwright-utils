@@ -24,7 +24,7 @@ const connect = {
   launch: browserMock,
 };
 
-jest.genMockFromModule('playwright-core');
+jest.genMockFromModule('playwright');
 module.exports = {
   chromium: connect,
   firefox: connect,
