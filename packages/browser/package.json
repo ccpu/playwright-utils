@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@playwright-utils/mocks": "^1.1.1",
-    "playwright": "^1.4.2"
+    "playwright": "^1.6.2"
   },
   "types": "./lib/index.d.ts",
   "publishConfig": {

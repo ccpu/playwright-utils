@@ -22,7 +22,7 @@
     "url": "https://github.com/Cyrus-d/playwright-utils/issues"
   },
   "dependencies": {
-    "playwright": "^1.4.2"
+    "playwright": "^1.6.2"
   },
   "types": "./lib/index.d.ts",
   "publishConfig": {
