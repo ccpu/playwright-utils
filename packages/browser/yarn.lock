@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@playwright-utils/mocks@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@playwright-utils/mocks/-/mocks-1.1.1.tgz#b06c7c06b5bd421099193a6b0359421c2209a7e4"
-  integrity sha512-gFyr27B6s35yI98AEQVij6anTW9oB+7qKPSliKDpR5MU3Ij04ABf25cRu+cWYLCMTv0ka0Q/Mb/eH4HI+cE8+A==
-  dependencies:
-    playwright "^1.4.2"
-
 "@types/node@*":
   version "14.11.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.2.tgz#2de1ed6670439387da1c9f549a2ade2b0a799256"
@@ -171,22 +164,6 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha1-elfrVQpng/kRUzH89GY9XI4AelA=
-
-playwright@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.4.2.tgz#84dac641ff7af9f465e367e01fde8a8f1cc274bf"
-  integrity sha512-qiQHrhU4JBxup9JoGZff6hdFL2VrD+ae5QLELGHwRq/vYNQFeJF10Z3ENnQ6hWJmG+YnpfzgoBvX+cUg4WHwTw==
-  dependencies:
-    debug "^4.1.1"
-    extract-zip "^2.0.1"
-    https-proxy-agent "^5.0.0"
-    jpeg-js "^0.4.2"
-    mime "^2.4.6"
-    pngjs "^5.0.0"
-    progress "^2.0.3"
-    proxy-from-env "^1.1.0"
-    rimraf "^3.0.2"
-    ws "^7.3.1"
 
 playwright@^1.6.2:
   version "1.6.2"

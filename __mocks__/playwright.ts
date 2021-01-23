@@ -1,7 +1,7 @@
 const browserFuncMock = {
   close: async () => {
     return new Promise((resolve) => {
-      resolve();
+      resolve({});
     });
   },
   newContext: async () => {
