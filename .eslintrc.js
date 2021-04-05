@@ -13,11 +13,9 @@ module.exports = {
   plugins: ['@typescript-eslint', 'sort-keys-fix', 'jest'],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'prettier',
-    'prettier/@typescript-eslint',
   ],
   rules: {
     'sort-keys-fix/sort-keys-fix': 'warn',
