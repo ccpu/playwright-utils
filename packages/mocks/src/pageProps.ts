@@ -39,7 +39,7 @@ export const pagePropsMock = (page?: Partial<Page>): PageProps => {
     $eval: selectorOperations,
     close: () => new Promise((resolve) => resolve()),
 
-    goto: () => new Promise((resolve) => resolve()),
+    goto: () => new Promise((resolve) => resolve(null)),
 
     mouse: {
       down: () => new Promise((resolve) => resolve()),
